@@ -33,15 +33,15 @@ const screenLogos = [
     text: "水の音",
     content: [
       {
-        image: require("./assets/image/water.png"),
+        image: {uri: "https://firebasestorage.googleapis.com/v0/b/mind-productbank.appspot.com/o/water.png?alt=media&token=d26cad76-ea7a-4cd1-8d56-eda3c257c060"},
         title: '雨の音',
         videoUri: {uri: "https://firebasestorage.googleapis.com/v0/b/mind-productbank.appspot.com/o/video.mp4?alt=media&token=4ba0929b-ae3f-4252-9a6a-f0342fa7132d"}
       }, {
-        image: require("./assets//image/sea.png"),
+        image: {uri: "https://firebasestorage.googleapis.com/v0/b/mind-productbank.appspot.com/o/sea.png?alt=media&token=954ac49e-05d3-499f-8377-032d53358ecd"},
         title: '海の音',
         videoUri: {uri: "https://firebasestorage.googleapis.com/v0/b/mind-productbank.appspot.com/o/sea.mp4?alt=media&token=ba90e77d-8d07-4488-9f2a-9d616a842081"}
       }, {
-        image: require("./assets//image/sky.png"),
+        image: {uri: "https://firebasestorage.googleapis.com/v0/b/mind-productbank.appspot.com/o/sky.png?alt=media&token=ec2b765c-4d24-42c2-b830-5661743fa2be"},
         title: '波の音',
         videoUri: {uri: "https://firebasestorage.googleapis.com/v0/b/mind-productbank.appspot.com/o/wave.mp4?alt=media&token=b67827eb-c164-4dfa-b06c-424ffcbdd3c5"}
       }
@@ -50,7 +50,7 @@ const screenLogos = [
     text: "森の音",
     content: [
       {
-        image: require("./assets//image/sky.png"),
+        image: {uri: "https://firebasestorage.googleapis.com/v0/b/mind-productbank.appspot.com/o/sky.png?alt=media&token=ec2b765c-4d24-42c2-b830-5661743fa2be"},
         title: '波の音',
         videoUri: {uri: "https://firebasestorage.googleapis.com/v0/b/mind-productbank.appspot.com/o/wave.mp4?alt=media&token=b67827eb-c164-4dfa-b06c-424ffcbdd3c5"}
       }
