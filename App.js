@@ -65,7 +65,7 @@ const screenLogos = [
 ];
 
 
-// 瞑想のコンテンツの種類
+// 瞑想のコンテンツ
 const logos = [
   {
     text: "マインドフルネス",
