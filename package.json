@@ -1,0 +1,40 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject"
+  },
+  "dependencies": {
+    "expo": "^33.0.0",
+    "expo-font": "^5.0.1",
+    "expo-linear-gradient": "~5.0.1",
+    "galio-framework": "^0.5.3",
+    "graphql": "^14.3.1",
+    "graphql-tag": "^2.10.1",
+    "native-base": "^2.12.1",
+    "react": "16.8.3",
+    "react-apollo": "^2.5.8",
+    "react-dom": "^16.8.6",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
+    "react-native-dynamic-vector-icons": "0.0.4",
+    "react-native-iphone-x-helper": "^1.2.1",
+    "react-native-linear-gradient": "^2.5.4",
+    "react-native-slider": "^0.11.0",
+    "react-native-typography": "^1.4.1",
+    "react-native-vector-icons": "^6.5.0",
+    "react-native-web": "^0.11.4",
+    "styled-components": "^4.3.2"
+  },
+  "devDependencies": {
+    "babel-preset-expo": "^5.1.1"
+  },
+  "private": true,
+  "rnpm": {
+    "assets": [
+      "./assets/fonts/"
+    ]
+  }
+}
