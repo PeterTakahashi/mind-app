@@ -10,11 +10,11 @@ export default class VideoComponent extends React.Component  {
     super(props);
   }
 
-  _renderVideo (name, videoContainer) {
+  _renderVideo (videoUri, videoContainer) {
       return (
         <View style={videoContainer}>
           <Video
-            source={name}
+            source={videoUri}
             rate={1.0}
             volume={1}
             isMuted={false}
@@ -29,7 +29,7 @@ export default class VideoComponent extends React.Component  {
 
   render () {
     return (
-      this._renderVideo(this.props.name, this.props.videoContainer)
+      this._renderVideo(this.props.videoUri, this.props.videoContainer)
     );
   }
 }

@@ -35,15 +35,15 @@ const screenLogos = [
       {
         image: require("./assets/image/water.png"),
         title: '雨の音',
-        videoUri: require("./assets/video/video.mp4")
+        videoUri: {uri: "https://firebasestorage.googleapis.com/v0/b/mind-productbank.appspot.com/o/video.mp4?alt=media&token=4ba0929b-ae3f-4252-9a6a-f0342fa7132d"}
       }, {
         image: require("./assets//image/sea.png"),
         title: '海の音',
-        videoUri: require("./assets/video/sea.mp4")
+        videoUri: {uri: "https://firebasestorage.googleapis.com/v0/b/mind-productbank.appspot.com/o/sea.mp4?alt=media&token=ba90e77d-8d07-4488-9f2a-9d616a842081"}
       }, {
         image: require("./assets//image/sky.png"),
         title: '波の音',
-        videoUri: require("./assets/video/wave.mp4")
+        videoUri: {uri: "https://firebasestorage.googleapis.com/v0/b/mind-productbank.appspot.com/o/wave.mp4?alt=media&token=b67827eb-c164-4dfa-b06c-424ffcbdd3c5"}
       }
     ]
   }, {
@@ -52,7 +52,7 @@ const screenLogos = [
       {
         image: require("./assets//image/sky.png"),
         title: '波の音',
-        videoUri: require("./assets/video/wave.mp4")
+        videoUri: {uri: "https://firebasestorage.googleapis.com/v0/b/mind-productbank.appspot.com/o/wave.mp4?alt=media&token=b67827eb-c164-4dfa-b06c-424ffcbdd3c5"}
       }
     ]
   }, {
@@ -150,7 +150,7 @@ export default class App extends React.Component {
       audioContent: null,
       beforeShow: null,
       show: "home",
-      videoUri: require("./assets/video/video.mp4"),
+      videoUri: {uri: "https://firebasestorage.googleapis.com/v0/b/mind-productbank.appspot.com/o/video.mp4?alt=media&token=4ba0929b-ae3f-4252-9a6a-f0342fa7132d"},
       value: 1,
       kindVoice: 0,
       kindScreen: 0,
@@ -263,7 +263,7 @@ export default class App extends React.Component {
 
   render() {
     return (<View style={styles.container}>
-      <VideoComponent videoContainer={this.state.videoContainer} value={this.state.value} name={this.state.videoUri}/>
+      <VideoComponent videoContainer={this.state.videoContainer} value={this.state.value} videoUri={this.state.videoUri}/>
       <View style={styles.mainContainer}>
         {this.renderStack()}
         {this.renderBottomBar()}
