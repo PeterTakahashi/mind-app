@@ -1,4 +1,4 @@
 /node_modules/*
 /.DS_Store
-/assets/video/*
-/assets/image/*
+/assets/video
+/assets/image

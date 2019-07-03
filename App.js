@@ -8,7 +8,6 @@ import {
   Dimensions
 } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-
 import SettingsComponent from "./src/components/SettingsComponent";
 import VideoComponent from "./src/components/VideoComponent";
 import HomeComponent from "./src/components/HomeComponent";
@@ -74,22 +73,26 @@ const logos = [
         key: "Dd4EtjxS",
         image: 'https://cdn.pixabay.com/photo/2018/06/17/16/08/meditation-3480815_1280.jpg',
         title: 'はじめての瞑想',
-        caption: '7 min'
+        caption: '7 min',
+        music: {uri: "https://yusuke-nakamura.firebaseapp.com/mp3/a%20shooting%20star.mp3"}
       }, {
         key: "mX4zdatK",
         image: 'https://cdn.pixabay.com/photo/2019/06/24/15/31/forest-4296305_960_720.jpg',
         title: 'はじめての瞑想',
-        caption: '7 min'
+        caption: '7 min',
+        music: {uri: "https://yusuke-nakamura.firebaseapp.com/mp3/a%20shooting%20star.mp3"}
       }, {
         key: "Qf26D3MF",
         image: 'https://cdn.pixabay.com/photo/2018/06/17/16/08/meditation-3480815_1280.jpg',
         title: 'はじめての瞑想',
-        caption: '7 min'
+        caption: '7 min',
+        music: {uri: "https://yusuke-nakamura.firebaseapp.com/mp3/a%20shooting%20star.mp3"}
       }, {
         key: "Ph8dpSbn",
         image: 'https://cdn.pixabay.com/photo/2018/06/17/16/08/meditation-3480815_1280.jpg',
         title: 'はじめての瞑想',
-        caption: '7 min'
+        caption: '7 min',
+        music: {uri: "https://yusuke-nakamura.firebaseapp.com/mp3/a%20shooting%20star.mp3"}
       }
     ]
   }, {
@@ -99,7 +102,8 @@ const logos = [
         key: "k3LwrvJh",
         image: 'https://cdn.pixabay.com/photo/2018/06/17/16/08/meditation-3480815_1280.jpg',
         title: "ベーシック瞑想",
-        caption: '7 min'
+        caption: '7 min',
+        music: {uri: "https://yusuke-nakamura.firebaseapp.com/mp3/a%20shooting%20star.mp3"}
       }
     ]
   }, {
@@ -109,7 +113,8 @@ const logos = [
         key: "Yx875qej",
         image: 'https://cdn.pixabay.com/photo/2018/06/17/16/08/meditation-3480815_1280.jpg',
         title: 'リラックスできる瞑想',
-        caption: '7 min'
+        caption: '7 min',
+        music: {uri: "https://yusuke-nakamura.firebaseapp.com/mp3/a%20shooting%20star.mp3"}
       }
     ]
   }, {
@@ -119,7 +124,8 @@ const logos = [
         key: "En3mJY2F",
         image: 'https://cdn.pixabay.com/photo/2018/06/17/16/08/meditation-3480815_1280.jpg',
         title: '物語',
-        caption: '7 min'
+        caption: '7 min',
+        music: {uri: "https://yusuke-nakamura.firebaseapp.com/mp3/a%20shooting%20star.mp3"}
       }
     ]
   }
@@ -130,7 +136,8 @@ const news = [
     key: "Dd4EtjxS",
     title: "はじめての瞑想",
     caption: "9 min",
-    image: "https://cdn.pixabay.com/photo/2018/06/17/16/08/meditation-3480815_1280.jpg"
+    image: "https://cdn.pixabay.com/photo/2018/06/17/16/08/meditation-3480815_1280.jpg",
+    music: {uri: "https://yusuke-nakamura.firebaseapp.com/mp3/a%20shooting%20star.mp3"}
   }
 ]
 
@@ -150,14 +157,12 @@ export default class App extends React.Component {
       audioContent: null,
       beforeShow: null,
       show: "home",
-      videoUri: {uri: "https://firebasestorage.googleapis.com/v0/b/mind-productbank.appspot.com/o/video.mp4?alt=media&token=4ba0929b-ae3f-4252-9a6a-f0342fa7132d"},
+      videoUri: { uri: "https://firebasestorage.googleapis.com/v0/b/mind-productbank.appspot.com/o/video.mp4?alt=media&token=4ba0929b-ae3f-4252-9a6a-f0342fa7132d" },
       value: 1,
       kindVoice: 0,
       kindScreen: 0,
       isShow: false,
-      videoContainer: {
-        zIndex: 1
-      }
+      videoContainer: { zIndex: 1 }
     }
     this.changeVideo = this.changeVideo.bind(this);
     this.changeVolume = this.changeVolume.bind(this);
@@ -224,6 +229,7 @@ export default class App extends React.Component {
           title = elementContent.title
           image = elementContent.image
           caption = elementContent.caption
+          music = elementContent.music
         } else {
           return null
         }
@@ -236,11 +242,13 @@ export default class App extends React.Component {
       audioContent: {
         title: title,
         image: image,
-        caption: caption
+        caption: caption,
+        music: music
       }
     })
     console.log(title)
     console.log(key)
+    console.log(music) //ここで再生を開始させたい。
   }
 
   changeVoiceKind(id) {
@@ -262,13 +270,15 @@ export default class App extends React.Component {
   }
 
   render() {
-    return (<View style={styles.container}>
-      <VideoComponent videoContainer={this.state.videoContainer} value={this.state.value} videoUri={this.state.videoUri}/>
-      <View style={styles.mainContainer}>
-        {this.renderStack()}
-        {this.renderBottomBar()}
+    return (
+      <View style={styles.container}>
+        <VideoComponent videoContainer={this.state.videoContainer} value={this.state.value} videoUri={this.state.videoUri}/>
+        <View style={styles.mainContainer}>
+          {this.renderStack()}
+          {this.renderBottomBar()}
+        </View>
       </View>
-    </View>);
+  );
   }
 }
 
