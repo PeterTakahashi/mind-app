@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, ScrollView, Dimensions, TouchableOpacity } from 'react-native';
-import { Font } from 'expo';
+import * as Font from 'expo-font';
 import SettingsNews from "../screens/SettingsNews";
 
 const width = Dimensions.get('window').width; // Window width
@@ -40,10 +40,10 @@ const styles = StyleSheet.create({
       fontSize: 50,
       fontWeight: 'bold',
       textAlign: 'center',
-      fontFamily: "open-sans-bold"
+      fontFamily: 'open-sans-bold'
     },
     opacity: {
         height: height,
-        width: width,
+        width: width
     },
 });
